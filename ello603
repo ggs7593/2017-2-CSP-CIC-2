@@ -1,0 +1,23 @@
+
+-- ASYSCONTENTELEMENT 테이블에 데이터 추가
+-- ELEMENTID 컬럼과 파일사이즈 변경 하여 insert 수행
+Insert into ASYSCONTENTELEMENT
+   (ELEMENTID, VOLUMEID, FILEKEY, FILESIZE, CREATEDATE, 
+    LASTACCESS, CONTENTTYPE, CONTENTCLASSID, GENERALDATA, CHECKHINT, 
+    WRITEDATE, RETENTION, CHECKSUM)
+ Values
+   ('201709271324150o', '2HS_V001', 'hcpv001/4/2016121411571500.bin,3890344,104949', 100149, sysdate, 
+    sysdate, 1, '2HS_ARC', NULL, 2000000000, 
+    sysdate, 0, NULL);
+    
+COMMIT;
+
+
+
+
+
+-- 볼륨정보 테이블에 spaceleft값 변경
+
+update asysvolume set spaceleft ='25952457554' where volumeid='1HS_V001'
+
+update asysvolume set spaceleft ='32888804764' where volumeid='2HS_V001'
