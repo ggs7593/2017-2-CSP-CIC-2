@@ -880,7 +880,7 @@
             return this._months[m.month()];
         },
 
-        _monthsShort : 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_'),
+        _monthsShort : '01_02_03_04_05_06_07_08_09_10_11_12'.split('_'),
         monthsShort : function (m) {
             return this._monthsShort[m.month()];
         },

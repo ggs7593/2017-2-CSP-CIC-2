@@ -17,7 +17,33 @@
 
       <!--dropdown!!!!!!!!!!-->
       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <!--
+      <script src="d3.v4.min.js"></script>
+      <script src="mpld3.v0.1.js"></script>
+      -->
+      <script>
+        var sy1, sm1, sd1, ey1, em1, ed1;
+        var sy2, sm2, sd2, ey2, em2, ed2;
+        var sy3, sm3, sd3, ey3, em3, ed3;
+      </script>
+      <!--
+      <script>
 
+        $(document).ready(function() {
+          var jv1 = {sy : 2017, sm : 9, sd : 0, ey : 2017, em : 9, ed : 0, 
+            file : ""};
+          $.post('inzent.cgi', jv1, function(data, status) {
+            $('').html(data);
+          });
+
+          var jv2 = {sy : 2012, sm : 9, sd : 0, ey : 2017, em : 9, ed : 0,
+            file : "2.xlsx"};
+          $.post('inzent.cgi', jv2, function(data, status) {
+            $('#2').html(data);
+          });
+        });
+      </script>
+      -->
    </head>
 
 
@@ -83,7 +109,7 @@
           <h1 class="text-center">사용량 통계</h1>
 
           <hr />
-            graph
+          <!--<div id="1"></div>-->
 
 
             <div class="well well-sm">
@@ -101,9 +127,16 @@
                </form>
 
                <script type="text/javascript">
+               var vari;
                $(document).ready(function() {
                   $('#daterange1').daterangepicker(null, function(start, end, label) {
                     console.log(start.toISOString(), end.toISOString(), label);
+                    sy1=String(start).split(" ")[3];
+                    sm1=String(start).split(" ")[1];
+                    sd1=String(start).split(" ")[2];
+                    ey1=String(end).split(" ")[3];
+                    em1=String(end).split(" ")[1];
+                    ed1=String(end).split(" ")[2];
                   });
                });
                </script>
@@ -113,7 +146,7 @@
             <hr />
             파이
             <hr />
-            graph graph
+            <!--<div id="2"></div>-->
             <div class="well well-sm">
 
             <h4>기간 설정</h4>
@@ -134,12 +167,24 @@
                $(document).ready(function() {
                   $('#daterange2').daterangepicker(null, function(start, end, label) {
                     console.log(start.toISOString(), end.toISOString(), label);
+                    sy2=String(start).split(" ")[3];
+                    sm2=String(start).split(" ")[1];
+                    sd2=String(start).split(" ")[2];
+                    ey2=String(end).split(" ")[3];
+                    em2=String(end).split(" ")[1];
+                    ed2=String(end).split(" ")[2];
                   });
                });
 
                $(document).ready(function() {
                   $('#daterange3').daterangepicker(null, function(start, end, label) {
                     console.log(start.toISOString(), end.toISOString(), label);
+                    sy3=String(start).split(" ")[3];
+                    sm3=String(start).split(" ")[1];
+                    sd3=String(start).split(" ")[2];
+                    ey3=String(end).split(" ")[3];
+                    em3=String(end).split(" ")[1];
+                    ed3=String(end).split(" ")[2];
                   });
                });
                </script>
